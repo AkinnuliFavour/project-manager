@@ -28,9 +28,17 @@ export default function RootLayout({
 		<html lang="en">
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+				style={{
+					backgroundImage: "url('/bg.jpeg')",
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+					backgroundRepeat: "no-repeat",
+					backgroundAttachment: "fixed",
+					minHeight: "100vh",
+				}}
 			>
-				<div className="min-h-screen bg-gray-100 p-6">
-					<div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6">
+				<div className="min-h-screen bg-gray-700 bg-opacity-10 bg-clip-padding backdrop-filter backdrop-blur-sm p-6">
+					<div className="max-w-3xl mx-auto bg-white bg-opacity-60 rounded-lg shadow-md p-6">
 						{children}
 						{/* Navigation Icons (Bottom Bar for Web - Styled as a Footer) */}
 						<Navigation />
