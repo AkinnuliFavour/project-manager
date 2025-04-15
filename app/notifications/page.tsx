@@ -87,55 +87,40 @@ const NotificationsPage = () => {
 	];
 
 	return (
-		<div className="min-h-screen bg-gray-100 p-6">
-			<div className="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-6">
-				{/* Header */}
-				<div className="flex justify-between items-center mb-6">
-					<h1 className="text-2xl font-bold text-blue-600">Notification</h1>
-					<Button color="light" size="sm" pill>
-						<FiCheckCircle />
-					</Button>
-				</div>
-
-				{/* Notifications List */}
-				<ListGroup>
-					{notifications.map((notification) => (
-						<ListGroup.Item key={notification.id} className="p-2">
-							<div className="flex items-center gap-2">
-								<notification.icon
-									className={`h-5 w-5 ${
-										notification.isRead ? "text-gray-400" : "text-blue-600"
-									}`}
-								/>
-								<div className="flex-1">
-									<p
-										className={`text-gray-700 ${
-											notification.isRead ? "text-gray-400" : ""
-										}`}
-									>
-										{notification.message}
-									</p>
-									<p className="text-sm text-gray-500">{notification.date}</p>
-								</div>
-							</div>
-						</ListGroup.Item>
-					))}
-				</ListGroup>
-
-				{/* Navigation Icons (Bottom Bar for Web - Styled as a Footer) */}
-				<div className="mt-8 flex justify-around border-t pt-4">
-					<Button color="light" size="sm">
-						<FiHome />
-					</Button>
-					<Button color="light" size="sm">
-						<FiCalendar />
-					</Button>
-					<Button color="light" size="sm">
-						<FiUser />
-					</Button>
-				</div>
+		<>
+			{/* Header */}
+			<div className="flex justify-between items-center mb-6">
+				<h1 className="text-2xl font-bold text-blue-600">Notification</h1>
+				<Button color="light" size="sm" pill>
+					<FiCheckCircle />
+				</Button>
 			</div>
-		</div>
+
+			{/* Notifications List */}
+			<ListGroup>
+				{notifications.map((notification) => (
+					<ListGroup.Item key={notification.id} className="p-2">
+						<div className="flex items-center gap-2">
+							<notification.icon
+								className={`h-5 w-5 ${
+									notification.isRead ? "text-gray-400" : "text-blue-600"
+								}`}
+							/>
+							<div className="flex-1">
+								<p
+									className={`text-gray-700 ${
+										notification.isRead ? "text-gray-400" : ""
+									}`}
+								>
+									{notification.message}
+								</p>
+								<p className="text-sm text-gray-500">{notification.date}</p>
+							</div>
+						</div>
+					</ListGroup.Item>
+				))}
+			</ListGroup>
+		</>
 	);
 };
 
